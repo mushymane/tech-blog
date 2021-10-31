@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, Comment } = require('../../models');
+const { Post, Comment, User } = require('../../models');
 
 // *** UNCOMMENT WHEN READY FOR FRONTEND ***
 // const withAuth = require('../../utils/auth');
@@ -12,6 +12,7 @@ router.post('/', async (req, res) => {
         // const newComment = await Comment.create({
         //     ...req.body,
         //     // *** UNCOMMENT WHEN DONE WITH TESTING ***
+        //     // post_id: req.params.id,
         //     // user_id: req.session.user_id
         // });
 
@@ -41,6 +42,34 @@ router.delete('/:id', async (req, res) => {
         }
 
         res.status(200).json(commentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/', async (req, res) => {
+    try {
+        const commentData = await Comment.findAll({
+            include: [{ model: Post }, { model: User }]
+        });
+
+        res.status(200).json(commentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/:id', async (req, res) => {
+    try {
+        const commentData = await Comment.findByPk(req.params.id, {
+            include: [{ model: Post }, { model: User }]
+        })
+
+        if (!commentData) {
+            res.status(404).json({ message: 'No comment found with that id' })
+        }
+
+        res.status(200).json(commentData)
     } catch (err) {
         res.status(500).json(err);
     }
