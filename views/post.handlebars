@@ -1,17 +1,13 @@
-<div class="card" style="width: 80%;">
-    <h3 class="card-title">{{post.title}}</h5>
+<div class="card" style="width: 100%;">
+    <h3 class="card-title">{{post.title}}</h3>
     <div class="card-body">
         <p class="card-text">{{post.text}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
-
-    {{!-- Need to change user_id to actual username --}}
-    {{!-- post.user.username --}}
     <div class="card-footer text-muted">
-        Posted by {{post.user_id}} on {{post.date_created}}
+        Posted by {{post.user.username}} on {{format_date post.date_created}}
     </div>
 </div>
-
+<br>
 <h4>Comments</h4>
 
 {{#if logged_in}}
@@ -27,19 +23,19 @@
     </form>
 </div>
 {{else}}
-<h5><a href="/login">Log in</a> to leave a comment</h5>
+<h5><a href="/login">Log in</a> or <a href="/signup">sign up</a> to leave a comment</h5>
 {{/if}}
 
 {{#each post.comments}}
-<div class="card" style="width: 80%;">
-    <p class="card-text">{{comment.text}}</p>
-    {{!-- Need to change user_id to actual username --}}
-    <div class="card-footer">
-        {{comment.user_id}}, {{comment.date_created}}
+<div class="card mt-3" style="width: 80%;">
+    <p class="card-text">{{text}}</p>
+    <div class="card-footer text-muted">
+        {{!-- need to change user_id to username somehow --}}
+        {{user_id}}, {{format_date date_created}}
     </div>
 </div>
 {{/each}}
 
 {{#if logged_in}}
-<script src="./js/post.js"></script>
+<script src="/js/post.js"></script>
 {{/if}}

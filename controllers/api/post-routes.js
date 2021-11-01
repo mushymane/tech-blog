@@ -55,7 +55,7 @@ router.put('/:id', async (req, res) => {
     try {
         console.log(req.body)
         const updatedPost = await Post.update(
-            ...req.body,
+            {...req.body},
             {
                 where: {
                     id: req.params.id

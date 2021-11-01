@@ -5,14 +5,16 @@ const newPostHandler = async (event) => {
     const text = document.querySelector('#content').value;
 
     if (title && text) {
-        const response = await fetch('/api/posts', {
+        
+        const response = await fetch('/api/posts/', {
             method: 'POST',
             body: JSON.stringify({ title, text }),
             headers: {
                 'Content-Type' : 'application/json'
             }
         });
-
+        console.log(title, text)
+        // console.log(req.body)
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
