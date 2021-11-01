@@ -6,6 +6,9 @@ This full stack application is a mini blog website. A user can sign up, create a
 
 Visit the website at: [Heroku](https://damp-escarpment-99267.herokuapp.com/)
 
+## Preview
+![alt blog](assets/dashboard.png)
+
 ## Table of Contents
 
 * [Techonologies Used](#technologies-used)
