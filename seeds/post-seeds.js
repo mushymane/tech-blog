@@ -2,19 +2,9 @@ const { Post } = require('../models');
 
 const postData = [
     {
-        title: 'hey',
-        text: 'wassup',
+        title: 'Get started by signing up',
+        text: 'Welcome to the Tech Blog',
         user_id: 1
-    },
-    {
-        title: 'hello',
-        text: 'whats up',
-        user_id: 2
-    },
-    {
-        title: 'hi',
-        text: 'whats gucci',
-        user_id: 3
     },
 ]
 

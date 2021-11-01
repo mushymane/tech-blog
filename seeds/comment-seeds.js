@@ -13,27 +13,27 @@ const commentData = [
     },
     {
         text: 'This is cool',
-        post_id: 2,
+        post_id: 1,
         user_id: 3
     },
     {
         text: 'Isnt it?',
-        post_id: 2,
+        post_id: 1,
         user_id: 2
     },
     {
-        text: 'Wow amazing',
-        post_id: 3,
+        text: 'Commenting on my own post hehehaha',
+        post_id: 1,
         user_id: 1
     },
     {
         text: 'So inspiring',
-        post_id: 3,
+        post_id: 1,
         user_id: 2
     },
     {
         text: 'Get off the internet',
-        post_id: 3,
+        post_id: 1,
         user_id: 3
     }
 ]
