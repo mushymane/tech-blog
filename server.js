@@ -14,7 +14,7 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'Ultra secret ooo',
-    cookie: {},
+    cookie: {maxAge: 3600000}, // 1 hr log
     resave: false,
     saveUnitialized: true,
     store: new SequelizeStore({db: sequelize})
