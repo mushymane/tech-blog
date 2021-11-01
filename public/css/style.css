@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab&display=swap');
+
+* {
+    font-family: 'Hepta Slab', serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color:rgb(108, 84, 148)
+}
+
+h2, h3 {
+    color: rgb(228, 228, 228);
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card-title {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+}
+
+.card-body {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgb(201, 201, 201);
+}
+
+.form-label {
+    color: rgb(228, 228, 228);
+}
+
+#comment-form {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#logout {
+    cursor: pointer;
+}
