@@ -26,12 +26,12 @@
 <h5><a href="/login">Log in</a> or <a href="/signup">sign up</a> to leave a comment</h5>
 {{/if}}
 
-{{#each post.comments}}
+{{#each post.comments as |comment|}}
 <div class="card mt-3" style="width: 80%;">
     <p class="card-text px-2 pt-1">{{text}}</p>
     <div class="card-footer text-muted">
         {{!-- need to change user_id to username somehow --}}
-        {{user_id}}, {{format_date date_created}}
+        {{user.username}}, {{format_date date_created}}
     </div>
 </div>
 {{/each}}
