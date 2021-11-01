@@ -1,22 +1,21 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../../models');
 
-// *** UNCOMMENT WHEN READY FOR FRONTEND ***
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 
 // *** REPLACE WITH THIS AFTER TESTING ***
-// router.post('/', withAuth, async (req, res) => {
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
+// router.post('/', async (req, res) => {
     try {
-        // const newComment = await Comment.create({
-        //     ...req.body,
-        //     // *** UNCOMMENT WHEN DONE WITH TESTING ***
-        //     // post_id: req.params.id,
-        //     // user_id: req.session.user_id
-        // });
+        const newComment = await Comment.create({
+            ...req.body,
+            // *** UNCOMMENT WHEN DONE WITH TESTING ***
+            post_id: req.params.id,
+            user_id: req.session.user_id
+        });
 
-        const newComment = await Comment.create(req.body);
+        // const newComment = await Comment.create(req.body);
 
         res.status(200).json(newComment);
     } catch (err) {

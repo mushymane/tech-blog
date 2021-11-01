@@ -36,14 +36,14 @@ router.post('/', async (req, res) => {
         const userData = await User.create(req.body);
 
         // *** UNCOMMENT WHEN DONE WITH TESTING ***
-        // req.session.save(() => {
-        //     req.session.user_id = userData.id;
-        //     req.session.logged_in = true;
-        //     res.status(200).json(userData);
-        // })
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+            res.status(200).json(userData);
+        })
 
         // *** COMMENT THIS OUT WHEN DONE WITH TESTING ***
-        res.status(200).json(userData);
+        // res.status(200).json(userData);
     } catch (err) {
         res.status(400).json(err);
     }
