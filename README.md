@@ -1,4 +1,5 @@
 # Tech Blog
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description 
 
@@ -54,6 +55,10 @@ Handlebars code that displays user posts on the website
 </div>
 {{/each}}
 ```
+
+## License
+
+This application is covered under the MIT license.
 
 ## Questions
 
